@@ -1,0 +1,14 @@
+version: "3"
+
+services: 
+  consumer:
+    build: ./consumer
+    depends_on: 
+        - rabbitmq
+        - db
+
+  rabbitmq:
+    image: rabbitmq
+
+  db:
+    image: mongo
